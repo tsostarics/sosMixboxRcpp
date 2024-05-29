@@ -7,7 +7,7 @@
 #'
 #' @return A function that takes a numeric value and returns a blended color
 #' @export
-#' @useDynLib mixboxRcpp
+#' @useDynLib sosMixboxRcpp
 pigmentRamp <- function(colors, values = NULL) {
   if (is.null(values)) {
     values <- seq(0, 1, length.out = length(colors))

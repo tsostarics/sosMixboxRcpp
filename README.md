@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# mixboxRcpp
+# sosMixboxRcpp
 
 This is a proof of concept package providing functions for color
 blending using [mixbox](https://github.com/scrtwpns/mixbox). This
@@ -12,16 +12,16 @@ use, see mixbox’s CC BY-NC 4.0 license
 
 ## Installation
 
-You can install the development version of mixboxRcpp like so:
+You can install the development version of sosMixboxRcpp like so:
 
 ``` r
-remotes::install_github("tsostarics/mixboxRcpp")
+remotes::install_github("tsostarics/sosMixboxRcpp")
 ```
 
 ## Example
 
 ``` r
-library(mixboxRcpp) # For mixing
+library(sosMixboxRcpp) # For mixing
 library(colorspace) # For displaying colors
 library(ggplot2)    # For plots
 library(patchwork)

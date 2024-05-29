@@ -2,10 +2,10 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 mixbox_blend <- function(r1, g1, b1, r2, g2, b2, t = 0.5) {
-    .Call('_mixboxRcpp_mixbox_blend', PACKAGE = 'mixboxRcpp', r1, g1, b1, r2, g2, b2, t)
+    .Call('_sosMixboxRcpp_mixbox_blend', PACKAGE = 'sosMixboxRcpp', r1, g1, b1, r2, g2, b2, t)
 }
 
 get_colors_to_mix <- function(x, values) {
-    .Call('_mixboxRcpp_get_colors_to_mix', PACKAGE = 'mixboxRcpp', x, values)
+    .Call('_sosMixboxRcpp_get_colors_to_mix', PACKAGE = 'sosMixboxRcpp', x, values)
 }
 

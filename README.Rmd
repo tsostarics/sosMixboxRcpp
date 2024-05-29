@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# mixboxRcpp
+# sosMixboxRcpp
 
 This is a proof of concept package providing functions for color blending using
 [mixbox](https://github.com/scrtwpns/mixbox).
@@ -26,16 +26,16 @@ This package is not licensed for commercial use, see mixbox's  CC BY-NC 4.0 lice
 
 ## Installation
 
-You can install the development version of mixboxRcpp like so:
+You can install the development version of sosMixboxRcpp like so:
 
 ``` r
-remotes::install_github("tsostarics/mixboxRcpp")
+remotes::install_github("tsostarics/sosMixboxRcpp")
 ```
 
 ## Example
 
 ```{r example}
-library(mixboxRcpp) # For mixing
+library(sosMixboxRcpp) # For mixing
 library(colorspace) # For displaying colors
 library(ggplot2)    # For plots
 library(patchwork)

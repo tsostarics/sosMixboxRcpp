@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // mixbox_blend
 IntegerVector mixbox_blend(unsigned char r1, unsigned char g1, unsigned char b1, unsigned char r2, unsigned char g2, unsigned char b2, float t);
-RcppExport SEXP _mixboxRcpp_mixbox_blend(SEXP r1SEXP, SEXP g1SEXP, SEXP b1SEXP, SEXP r2SEXP, SEXP g2SEXP, SEXP b2SEXP, SEXP tSEXP) {
+RcppExport SEXP _sosMixboxRcpp_mixbox_blend(SEXP r1SEXP, SEXP g1SEXP, SEXP b1SEXP, SEXP r2SEXP, SEXP g2SEXP, SEXP b2SEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -29,7 +29,7 @@ END_RCPP
 }
 // get_colors_to_mix
 NumericVector get_colors_to_mix(double x, NumericVector values);
-RcppExport SEXP _mixboxRcpp_get_colors_to_mix(SEXP xSEXP, SEXP valuesSEXP) {
+RcppExport SEXP _sosMixboxRcpp_get_colors_to_mix(SEXP xSEXP, SEXP valuesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -41,12 +41,12 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_mixboxRcpp_mixbox_blend", (DL_FUNC) &_mixboxRcpp_mixbox_blend, 7},
-    {"_mixboxRcpp_get_colors_to_mix", (DL_FUNC) &_mixboxRcpp_get_colors_to_mix, 2},
+    {"_sosMixboxRcpp_mixbox_blend", (DL_FUNC) &_sosMixboxRcpp_mixbox_blend, 7},
+    {"_sosMixboxRcpp_get_colors_to_mix", (DL_FUNC) &_sosMixboxRcpp_get_colors_to_mix, 2},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_mixboxRcpp(DllInfo *dll) {
+RcppExport void R_init_sosMixboxRcpp(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
