@@ -4,10 +4,11 @@
 # sosMixboxRcpp
 
 This is a proof of concept package providing functions for color
-blending using [mixbox](https://github.com/scrtwpns/mixbox). This
-package works provides a wrapper to the mixbox C++ code to blend two
-colors together via Rcpp. This package is not licensed for commercial
-use, see mixbox’s CC BY-NC 4.0 license
+blending using [mixbox](https://github.com/scrtwpns/mixbox). I primarily
+made this just to learn how to work with Rcpp a bit more. This package
+provides a wrapper to the mixbox C++ code to blend two colors together
+via Rcpp. This package is not licensed for commercial use, see mixbox’s
+CC BY-NC 4.0 license
 [here](https://github.com/scrtwpns/mixbox?tab=License-1-ov-file#readme).
 
 ## Installation
@@ -22,18 +23,18 @@ remotes::install_github("tsostarics/sosMixboxRcpp")
 
 ``` r
 library(sosMixboxRcpp) # For mixing
-library(colorspace) # For displaying colors
-library(ggplot2)    # For plots
-library(patchwork)
+library(colorspace)    # For displaying colors
+library(ggplot2)       # For plots
+library(patchwork)     #
 ```
 
-We can blend two colors together like so, using the pigments defined by
-the mixbox developers.
+The package provides a list of colors `PIGMENTS` as defined by the
+authors of mixbox. We can blend two colors together like in the below
+example, where mixing blue and yellow gives green as expected.
 
 ``` r
-colorspace::swatchplot(
-  blend_colors(PIGMENTS$PhthaloBlue, PIGMENTS$CadmiumYellow)
-)
+blend_colors(PIGMENTS$PhthaloBlue, PIGMENTS$CadmiumYellow) |> 
+  colorspace::swatchplot()
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
@@ -81,10 +82,13 @@ p1 + p2
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
+Note that you don’t *have* to use the pigments, you can use hex strings
+or colors defined by R.
+
 ``` r
-(p1 + scale_color_mixbox(low = PIGMENTS$PhthaloBlue,
+(p1 + scale_color_mixbox(low  = "#141b44",
                          high = 'white')) +
-  ((p1 + scale_color_gradient(low = PIGMENTS$PhthaloBlue,
+  ((p1 + scale_color_gradient(low  = "#141b44",
                               high = 'white')))
 ```
 
